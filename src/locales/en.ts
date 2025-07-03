@@ -8,11 +8,11 @@ export const en = {
     bookNow: "Book Now"
   },
   hero: {
-    subtitle: "BEACHFRONT LUXURY ACCOMMODATION",
-    title: "Experience Seaside Tranquility",
-    description: "Discover our exclusive collection of luxury beachfront apartments and hotel rooms, offering unparalleled comfort and breathtaking sea views.",
-    bookStay: "Book Your Stay",
-    exploreApartments: "Explore Apartments",
+    subtitle: "Where Every Plot Tells a Story of Peace, Prestige, and Possibility",
+    title: "Welcome to Golden Hills",
+    description: "Escape the city and embrace luxury living at Golden Hills — premium farmhouse plots nestled by the Aravallis, just minutes from Delhi.",
+    bookPlot: "Book Your Plot",
+    exploreApartments: "Explore Amenities",
     scrollDown: "Scroll Down"
   },
   footer: {

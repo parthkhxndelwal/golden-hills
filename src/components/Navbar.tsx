@@ -32,7 +32,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
   
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
+  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-500", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5 text-white")}>
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <LanguageSelector />
@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">
           {navLinks.map(link => <li key={link.name} className="relative">
-              <Link to={link.path} className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
+              <Link to={link.path} className={cn("font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full", scrolled ? "text-black dark:text-white" : "text-white")}>
                 {link.name}
               </Link>
             </li>)}
@@ -76,7 +76,7 @@ export default function Navbar() {
               </div>
               <ul className="space-y-6">
                 {navLinks.map(link => <li key={link.name}>
-                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link to={link.path} className="text-lg font-medium transition-colors hover:text-primary text-foreground" onClick={() => setMobileMenuOpen(false)}>
                       {link.name}
                     </Link>
                   </li>)}

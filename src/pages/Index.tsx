@@ -7,7 +7,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ApartmentCard, { ApartmentProps } from "@/components/ApartmentCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Wifi, Utensils, Waves, LifeBuoy, MapPin, Coffee } from "lucide-react";
+import { ArrowRight, Globe, Mountain, Droplet, Castle, Phone, Lock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Sample apartments data
@@ -58,32 +58,32 @@ export default function Index() {
   // Feature items
   const features = [
     {
-      icon: <Waves className="h-8 w-8 text-primary" />,
+      icon: <Mountain className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.beachfront.title,
       description: t.home.amenities.features.beachfront.description
     },
     {
-      icon: <LifeBuoy className="h-8 w-8 text-primary" />,
+      icon: <Droplet className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.pools.title,
       description: t.home.amenities.features.pools.description
     },
     {
-      icon: <Utensils className="h-8 w-8 text-primary" />,
+      icon: <Castle className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.restaurant.title,
       description: t.home.amenities.features.restaurant.description
     },
     {
-      icon: <Wifi className="h-8 w-8 text-primary" />,
+      icon: <Globe className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.wifi.title,
       description: t.home.amenities.features.wifi.description
     },
     {
-      icon: <Coffee className="h-8 w-8 text-primary" />,
+      icon: <Phone className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.bar.title,
       description: t.home.amenities.features.bar.description
     },
     {
-      icon: <MapPin className="h-8 w-8 text-primary" />,
+      icon: <Lock className="h-8 w-8 text-primary" />,
       title: t.home.amenities.features.location.title,
       description: t.home.amenities.features.location.description
     }

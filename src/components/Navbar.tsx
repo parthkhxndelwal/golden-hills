@@ -34,6 +34,11 @@ export default function Navbar() {
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-500", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5 text-white")}>
       <nav className="container flex justify-between items-center">
         <div className="flex items-center space-x-2">
+          <img 
+            src="/lovable-uploads/676a26bb-7a10-4030-9e46-379c66a5be16.png" 
+            alt="Golden Hills Logo" 
+            className="h-10 w-10 rounded-full"
+          />
           <Link to="/" className="text-2xl font-bold">Golden Hills</Link>
         </div>
 

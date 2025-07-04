@@ -1,126 +1,126 @@
 export const en = {
   nav: {
     home: "Home",
-    apartments: "Apartments",
+    apartments: "Plots",
     amenities: "Amenities",
     gallery: "Gallery",
     contact: "Contact",
-    bookNow: "Book Now"
+    bookNow: "Book Visit"
   },
   hero: {
-    subtitle: "Where Every Plot Tells a Story of Peace, Prestige, and Possibility",
-    title: "Welcome to Golden Hills",
-    description: "Escape the city and embrace luxury living at Golden Hills — premium farmhouse plots nestled by the Aravallis, just minutes from Delhi.",
-    bookPlot: "Book Your Plot",
-    exploreApartments: "Explore Amenities",
+    subtitle: "Premium Farmhouse Land @ ₹5100 / sq. yard",
+    title: "Golden Hills",
+    description: "Live amidst nature in the serene Aravalli hills — just a short drive from Delhi.",
+    bookPlot: "Book Now",
+    exploreApartments: "View Location",
     scrollDown: "Scroll Down"
   },
   footer: {
-    description: "Luxurious beachfront apartments and hotel rooms with stunning sea views, offering the perfect blend of comfort and elegance for your dream vacation.",
+    description: "Golden Hills is a premium farmhouse plotting project crafted for those who seek not just land, but a lifestyle. Nestled in the calm of nature near the Rajasthan border.",
     quickLinks: "Quick Links",
     contact: "Contact",
     newsletter: "Newsletter",
-    newsletterDesc: "Subscribe to our newsletter for special deals and updates.",
+    newsletterDesc: "Subscribe to our newsletter for project updates and exclusive offers.",
     yourEmail: "Your email address",
     subscribe: "Subscribe",
     allRights: "All rights reserved."
   },
   bookingForm: {
-    title: "Book Your Stay",
-    checkIn: "Check-in Date",
-    checkOut: "Check-out Date",
+    title: "Book a Visit or Send an Enquiry",
+    checkIn: "Visit Date",
+    checkOut: "Preferred Time",
     adults: "Adults",
     children: "Children",
     adult: "Adult",
     child: "Child",
     selectDate: "Select date",
-    checkAvailability: "Check Availability",
-    bookingConfirmed: "Booking Confirmed!"
+    checkAvailability: "Send Enquiry",
+    bookingConfirmed: "Enquiry Sent! We'll contact you soon."
   },
   testimonials: {
-    title: "What Our Guests Say",
-    description: "Discover why our guests keep coming back to MareSereno for their seaside getaways."
+    title: "What Our Clients Say",
+    description: "Discover why Golden Hills is the preferred choice for premium farmhouse plots near Delhi."
   },
   notFound: {
     title: "Page Not Found",
-    description: "We couldn't find the page you were looking for. Perhaps you took a wrong turn in paradise?",
+    description: "We couldn't find the page you were looking for. Perhaps you took a wrong turn?",
     returnHome: "Return Home"
   },
   home: {
     welcome: {
-      subtitle: "Welcome to MareSereno",
-      title: "Luxury Seaside Accommodations",
-      description1: "Nestled on the pristine Mediterranean coastline, MareSereno offers an exquisite collection of luxury apartments and hotel rooms. Our beachfront accommodations combine elegant design with modern comfort, creating the perfect setting for an unforgettable seaside getaway.",
-      description2: "Whether you're seeking a romantic escape, a family vacation, or a peaceful retreat, our diverse range of accommodations caters to every preference and need. Each space is thoughtfully designed to provide panoramic sea views and direct beach access.",
+      subtitle: "Discover Golden Hills",
+      title: "Premium Farmhouse Plotting Project",
+      description1: "Golden Hills is a premium farmhouse plotting project crafted for those who seek not just land, but a lifestyle. Nestled in the calm of nature near the Rajasthan border, it offers a perfect weekend escape just 2.5 hours from Delhi.",
+      description2: "Our freehold plots range from 500-2000 sq. yards, legally approved and clearly documented. Ideal for weekend homes or rental income in a peaceful, pollution-free environment.",
       learnMore: "Learn More"
     },
     booking: {
-      subtitle: "Book Your Stay",
-      title: "Reserve Your Perfect Getaway",
-      description: "Take the first step towards your dream vacation by checking availability and securing your preferred dates. Our simple booking process ensures a seamless experience from reservation to arrival.",
-      benefits: ["Instant confirmation", "Best rate guarantee", "Flexible cancellation options", "Secure payment"]
+      subtitle: "Book a Visit",
+      title: "Experience Golden Hills",
+      description: "Schedule a visit to see our premium farmhouse plots in person. Our team will guide you through the project and help you choose the perfect plot for your needs.",
+      benefits: ["Site visit arranged", "Transparent pricing", "Legal documentation", "Flexible payment plans"]
     },
     featuredApartments: {
-      subtitle: "Our Accommodations",
-      title: "Featured Apartments",
-      description: "Discover our most popular accommodation options, each offering a perfect blend of comfort, style, and breathtaking sea views.",
-      viewAll: "View All Apartments"
+      subtitle: "Our Offerings",
+      title: "Plot Options",
+      description: "Choose from our range of premium farmhouse plots, each offering a perfect blend of nature, accessibility, and investment potential.",
+      viewAll: "View All Plots"
     },
     amenities: {
-      subtitle: "Hotel Amenities",
+      subtitle: "Project Amenities",
       title: "Experience The Best",
-      description: "Enjoy our premium facilities and services designed to make your stay exceptional.",
+      description: "Enjoy our premium facilities and infrastructure designed to enhance your farmhouse experience.",
       features: {
         beachfront: {
-          title: "Beachfront Location",
-          description: "Direct access to pristine beaches with crystal clear waters."
+          title: "80-ft Wide Roads",
+          description: "Well-planned internal roads for easy access to all plots."
         },
         pools: {
-          title: "Swimming Pools",
-          description: "Relax by our infinity pools with stunning sea views."
+          title: "Landscaped Zones",
+          description: "Beautiful green spaces and landscaped areas throughout the project."
         },
         restaurant: {
-          title: "Gourmet Restaurant",
-          description: "Enjoy exquisite local and international cuisine."
+          title: "Yoga & Meditation Spots",
+          description: "Dedicated peaceful areas for wellness and relaxation."
         },
         wifi: {
-          title: "High-Speed Wi-Fi",
-          description: "Stay connected with complimentary high-speed internet."
+          title: "Water & Solar Lighting",
+          description: "Reliable water supply and eco-friendly solar lighting system."
         },
         bar: {
-          title: "Beach Bar & Café",
-          description: "Refreshing drinks and snacks served right on the beach."
+          title: "Open-Air Sports Areas",
+          description: "Recreational spaces for outdoor sports and activities."
         },
         location: {
-          title: "Prime Location",
-          description: "Close to local attractions, shops, and restaurants."
+          title: "Gated Security",
+          description: "24/7 gated access with on-site security for your peace of mind."
         }
       }
     },
     cta: {
-      title: "Ready for Your Dream Vacation?",
-      description: "Book your stay today and experience the perfect blend of luxury, comfort, and stunning sea views.",
-      bookNow: "Book Now"
+      title: "Ready to Own Your Dream Plot?",
+      description: "Book a visit today and discover why Golden Hills is the perfect choice for your farmhouse dreams.",
+      bookNow: "Book Visit"
     }
   },
   apartments: {
-    title: "Our Apartments & Rooms",
-    subtitle: "Discover our selection of premium accommodations, ranging from cozy studios to luxurious penthouses.",
+    title: "Available Plots",
+    subtitle: "Discover our selection of premium farmhouse plots, ranging from 500 to 2000 sq. yards.",
     filters: {
-      guests: "Guests",
-      anyGuests: "Any number of guests",
-      onePlus: "1+ guests",
-      twoPlus: "2+ guests",
-      threePlus: "3+ guests",
-      fourPlus: "4+ guests",
+      guests: "Plot Size",
+      anyGuests: "Any size",
+      onePlus: "500+ sq. yards",
+      twoPlus: "1000+ sq. yards",
+      threePlus: "1500+ sq. yards",
+      fourPlus: "2000+ sq. yards",
       location: "Location",
-      allLocations: "All locations",
+      allLocations: "All areas",
       priceRange: "Price Range",
       showing: "Showing",
       of: "of",
-      accommodations: "accommodations",
+      accommodations: "plots",
       resetFilters: "Reset Filters",
-      noMatch: "No apartments match your filters",
+      noMatch: "No plots match your filters",
       adjustFilters: "Try adjusting your filter criteria to see more options.",
       viewDetails: "View Details",
       features: "features",
@@ -129,26 +129,26 @@ export const en = {
   },
   gallery: {
     title: "Photo Gallery",
-    subtitle: "Explore our seaside paradise through captivating imagery.",
+    subtitle: "Explore Golden Hills through captivating imagery of our natural surroundings.",
     filters: {
       all: "All",
-      exterior: "Exterior",
-      rooms: "Rooms",
+      exterior: "Landscape",
+      rooms: "Plots",
       amenities: "Amenities"
     }
   },
   booking: {
-    title: "Book Your Stay",
-    subtitle: "Complete your reservation in a few simple steps.",
+    title: "Book Your Visit",
+    subtitle: "Schedule a site visit in a few simple steps.",
     steps: {
-      chooseRoom: "Choose Room",
-      guestDetails: "Guest Details",
+      chooseRoom: "Select Visit",
+      guestDetails: "Your Details",
       confirmation: "Confirmation"
     },
     dates: {
-      selectDates: "Select Dates and Guests",
-      checkIn: "Check-in Date",
-      checkOut: "Check-out Date",
+      selectDates: "Select Visit Date",
+      checkIn: "Visit Date",
+      checkOut: "Preferred Time",
       adults: "Adults",
       children: "Children",
       adult: "Adult",
@@ -156,14 +156,14 @@ export const en = {
       selectDate: "Select date"
     },
     accommodationSelect: {
-      title: "Select Your Accommodation",
-      guests: "Guests",
+      title: "Select Visit Type",
+      guests: "Visitors",
       selected: "Selected",
       select: "Select",
       continue: "Continue"
     },
     guestInfo: {
-      title: "Guest Information",
+      title: "Contact Information",
       firstName: "First Name",
       lastName: "Last Name",
       email: "Email",
@@ -172,69 +172,69 @@ export const en = {
       city: "City",
       zipCode: "Zip Code",
       country: "Country",
-      specialRequests: "Special Requests",
-      specialRequestsPlaceholder: "Any special requests or notes for your stay"
+      specialRequests: "Message / Query",
+      specialRequestsPlaceholder: "Any specific questions or requirements?"
     },
     payment: {
-      title: "Payment Information",
-      creditCard: "Credit Card",
-      payAtProperty: "Pay at Property",
-      nameOnCard: "Name on Card",
-      cardNumber: "Card Number",
-      cardNumberPlaceholder: "0000 0000 0000 0000",
-      expiryDate: "Expiry Date",
-      expiryDatePlaceholder: "MM/YY",
-      cvc: "CVC",
-      cvcPlaceholder: "123",
-      payAtPropertyInfo: "You will be required to provide a valid credit card upon arrival for security purposes, but payment will be collected during your stay at the property."
+      title: "Visit Confirmation",
+      creditCard: "Confirmed Visit",
+      payAtProperty: "Flexible Timing",
+      nameOnCard: "Contact Person",
+      cardNumber: "Phone Number",
+      cardNumberPlaceholder: "+91-XXXXX-XXXXX",
+      expiryDate: "Best Time to Call",
+      expiryDatePlaceholder: "Morning/Afternoon/Evening",
+      cvc: "Alternate Contact",
+      cvcPlaceholder: "Optional",
+      payAtPropertyInfo: "We'll contact you within 24 hours to confirm your visit details and provide directions."
     },
     summary: {
-      title: "Booking Summary",
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      guests: "Guests",
-      night: "night",
-      nights: "nights",
-      cleaningFee: "Cleaning fee",
-      serviceFee: "Service fee",
-      total: "Total"
+      title: "Visit Summary",
+      checkIn: "Visit Date",
+      checkOut: "Time",
+      guests: "Visitors",
+      night: "visit",
+      nights: "visits",
+      cleaningFee: "Transportation",
+      serviceFee: "Refreshments",
+      total: "Complimentary"
     },
     confirmation: {
-      title: "Review Booking Details",
-      accommodationDetails: "Accommodation Details",
-      guestDetails: "Guest Details",
+      title: "Review Visit Details",
+      accommodationDetails: "Visit Details",
+      guestDetails: "Contact Details",
       name: "Name",
       email: "Email",
       phone: "Phone",
       address: "Address", 
       city: "City",
       country: "Country",
-      specialRequests: "Special Requests",
-      paymentMethod: "Payment Method",
-      creditCard: "Credit Card",
-      priceSummary: "Price Summary",
+      specialRequests: "Message",
+      paymentMethod: "Visit Type",
+      creditCard: "Site Visit",
+      priceSummary: "Visit Summary",
       termsAgree: "I agree to the",
       termsLink: "Terms and Conditions",
       privacyLink: "Privacy Policy",
-      cancellationInfo: "I understand that my booking is subject to the property's cancellation policy.",
+      cancellationInfo: "I understand that visit timings may be adjusted based on availability.",
       back: "Back",
-      confirmBooking: "Confirm Booking",
-      success: "Booking Confirmed!",
-      emailSent: "Your reservation has been successfully confirmed. A confirmation email has been sent to",
-      bookingReference: "Booking Reference",
+      confirmBooking: "Confirm Visit",
+      success: "Visit Confirmed!",
+      emailSent: "Your visit has been successfully scheduled. A confirmation email has been sent to",
+      bookingReference: "Reference Number",
       returnToHome: "Return to Homepage"
     }
   },
   contact: {
     title: "Contact Us",
-    subtitle: "We're here to help make your stay unforgettable. Reach out with any questions or special requests.",
+    subtitle: "We're here to help you find your perfect farmhouse plot. Reach out with any questions.",
     getInTouch: "Get In Touch",
     address: "Address",
     phone: "Phone",
     email: "Email",
-    receptionHours: "Reception Hours",
-    checkInTime: "Check-in: After 3:00 PM",
-    checkOutTime: "Check-out: Before 11:00 AM",
+    receptionHours: "Office Hours",
+    checkInTime: "Mon-Sat: 9:00 AM - 6:00 PM",
+    checkOutTime: "Sunday: 10:00 AM - 4:00 PM",
     sendMessage: "Send Us a Message",
     fullName: "Full Name",
     phoneNumber: "Phone Number",
@@ -243,155 +243,164 @@ export const en = {
     howCanWeHelp: "How can we help you?",
     send: "Send Message",
     messageSent: "Message Sent!",
-    thankYou: "Thank you for reaching out. We'll respond to your message as soon as possible.",
+    thankYou: "Thank you for reaching out. We'll respond to your message within 24 hours.",
     faq: "Frequently Asked Questions",
-    faqSubtitle: "Find quick answers to commonly asked questions about our accommodations and services.",
+    faqSubtitle: "Find quick answers to commonly asked questions about Golden Hills plots.",
     questions: {
       checkInOut: {
-        question: "What are your check-in and check-out times?",
-        answer: "Check-in is from 3:00 PM onwards, and check-out is until 11:00 AM. Early check-in or late check-out may be arranged based on availability."
+        question: "What are the plot sizes available?",
+        answer: "We offer freehold plots ranging from 500 to 2000 sq. yards, all legally approved and clearly documented."
       },
       parking: {
-        question: "Is parking available at the property?",
-        answer: "Yes, we offer complimentary parking for all guests. Valet parking service is also available for an additional fee."
+        question: "What is the payment structure?",
+        answer: "We offer flexible 12-month payment plans with registry after 50% payment. Transparent pricing with no hidden costs."
       },
       pets: {
-        question: "Are pets allowed in the apartments?",
-        answer: "We welcome pets in designated pet-friendly apartments. Please inform us in advance if you plan to bring a pet, as additional charges may apply."
+        question: "Is the land legally approved?",
+        answer: "Yes, all our plots are freehold with clear documentation and legal approvals. We provide complete transparency in all dealings."
       },
       breakfast: {
-        question: "Is breakfast included in the room rate?",
-        answer: "Breakfast is included in select room packages. You can check the inclusion during the booking process or add it to your reservation at any time."
+        question: "What amenities are included?",
+        answer: "The project includes 80-ft wide roads, landscaped green zones, water supply, solar lighting, and 24/7 gated security."
       },
       transfers: {
-        question: "Do you offer airport transfers?",
-        answer: "Yes, we offer airport transfers for an additional fee. Please contact our concierge at least 48 hours before your arrival to arrange transportation."
+        question: "How far is it from Delhi?",
+        answer: "Golden Hills is just 2.5 hours drive from Delhi via NH-9/NH-48, located in Benati village near the Rajasthan border."
       },
       amenities: {
-        question: "What amenities are available at the property?",
-        answer: "Our property features swimming pools, a spa, restaurants, a beach bar, fitness center, and direct beach access. All apartments include Wi-Fi, air conditioning, and modern appliances."
+        question: "What are the nearby attractions?",
+        answer: "The project is surrounded by Aravalli Hills, close to Neemrana Fort (35 km), and near beautiful waterfalls and lakes."
       }
     }
   },
   apartmentDescriptions: {
     "1": {
-      name: "Deluxe Sea View Suite",
-      description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony."
+      name: "Premium Corner Plot",
+      description: "Corner plot with excellent road connectivity and natural boundaries."
     },
     "2": {
-      name: "Premium Family Apartment",
-      description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views."
+      name: "Hilltop View Plot",
+      description: "Elevated plot with panoramic views of the Aravalli hills."
     },
     "3": {
-      name: "Executive Beach Studio",
-      description: "Elegant studio with direct beach access, modern design, and premium finishes."
+      name: "Garden Facing Plot",
+      description: "Plot facing the landscaped garden areas with serene ambiance."
     },
     "4": {
-      name: "Luxury Penthouse Suite",
-      description: "Exclusive top-floor suite with expansive terrace and panoramic sea views."
+      name: "Large Family Plot",
+      description: "Spacious plot ideal for building a grand farmhouse with multiple facilities."
     },
     "5": {
-      name: "Classic Double Room",
-      description: "Comfortable hotel room with modern amenities and partial sea views."
+      name: "Starter Plot",
+      description: "Perfect sized plot for first-time farmhouse owners."
     },
     "6": {
-      name: "Garden View Apartment",
-      description: "Peaceful apartment surrounded by lush gardens, just a short walk from the beach."
+      name: "Investment Plot",
+      description: "Strategically located plot with high appreciation potential."
     }
   },
   amenitiesPage: {
-    title: "Our Amenities",
-    subtitle: "Discover the luxury amenities and services that make your stay unforgettable.",
-    description: "At MareSereno, we are dedicated to providing a comprehensive and luxurious stay experience. From our beachfront services to wellness facilities, every detail has been curated to ensure maximum comfort and pleasure.",
+    title: "Project Amenities",
+    subtitle: "Discover the premium amenities and infrastructure that make Golden Hills special.",
+    description: "At Golden Hills, we are dedicated to providing a comprehensive lifestyle experience. From infrastructure to recreational facilities, every detail has been planned to enhance your farmhouse living.",
     categories: {
       wellness: {
-        title: "Wellness & Relaxation",
-        description: "Treat yourself with our range of wellness services designed to rejuvenate body and mind.",
+        title: "Wellness & Recreation",
+        description: "Spaces designed for relaxation and recreation in nature's lap.",
         items: [
           {
-            title: "Luxury Spa",
-            description: "Our spa offers a full range of treatments, from traditional therapies to the most modern beauty treatments."
+            title: "Yoga & Meditation Spots",
+            description: "Dedicated peaceful areas surrounded by nature for wellness activities."
           },
           {
-            title: "Fitness Center",
-            description: "Maintain your fitness routine with our state-of-the-art gym featuring panoramic sea views."
+            title: "Open-Air Sports Areas",
+            description: "Recreational spaces for outdoor sports and family activities."
           },
           {
-            title: "Infinity Pool",
-            description: "Immerse yourself in our infinity pool while admiring the endless horizon of the sea."
+            title: "Landscaped Gardens",
+            description: "Beautiful green spaces and gardens throughout the project."
           },
           {
-            title: "Beach Yoga",
-            description: "Join our morning yoga sessions on the beach for a revitalizing awakening."
+            title: "Nature Walking Trails",
+            description: "Scenic walking paths through the natural landscape."
           }
         ]
       },
       dining: {
-        title: "Dining",
-        description: "Discover the best of local and international cuisine at our restaurants and bars.",
+        title: "Infrastructure",
+        description: "Modern infrastructure facilities for convenient living.",
         items: [
           {
-            title: "Gourmet Restaurant",
-            description: "Savor fine dishes prepared by our chefs with fresh local ingredients."
+            title: "80-ft Wide Roads",
+            description: "Well-planned internal roads for easy access to all plots."
           },
           {
-            title: "Beach Bar",
-            description: "Enjoy refreshing cocktails and light snacks with your feet in the sand."
+            title: "Water Supply System",
+            description: "Reliable water supply infrastructure throughout the project."
           },
           {
-            title: "Lounge Bar",
-            description: "Relax with a selection of fine wines and spirits in an elegant atmosphere."
+            title: "Solar Lighting",
+            description: "Eco-friendly solar lighting system for all common areas."
           },
           {
-            title: "Room Service",
-            description: "Enjoy gourmet meals in the privacy of your apartment, available 24 hours a day."
+            title: "Drainage System",
+            description: "Proper drainage and water management systems."
           }
         ]
       },
       services: {
-        title: "Extra Services",
-        description: "Take advantage of our additional services for a hassle-free stay.",
+        title: "Security & Services",
+        description: "Comprehensive security and maintenance services for peace of mind.",
         items: [
           {
-            title: "24/7 Concierge",
-            description: "Our concierge team is available at any time to assist you with any request."
+            title: "24/7 Gated Security",
+            description: "Round-the-clock security with controlled access points."
           },
           {
-            title: "Airport Transfers",
-            description: "Travel comfortably to and from the airport with our private transfer service."
+            title: "Plot Maintenance",
+            description: "Regular maintenance of common areas and infrastructure."
           },
           {
-            title: "Car Rental",
-            description: "Explore the area with our fleet of premium vehicles available for rent."
+            title: "Customer Support",
+            description: "Dedicated support team for all your queries and requirements."
           },
           {
-            title: "Guided Excursions",
-            description: "Discover local attractions with our personalized expert-guided tours."
+            title: "Legal Assistance",
+            description: "Complete legal support for documentation and registry processes."
           }
         ]
       },
       entertainment: {
-        title: "Entertainment",
-        description: "Enjoy a variety of recreational activities designed for all tastes.",
+        title: "Location Benefits",
+        description: "Strategic location with excellent connectivity and nearby attractions.",
         items: [
           {
-            title: "Water Sports",
-            description: "Try a wide range of water sports, from paddleboarding to jet skiing."
+            title: "Aravalli Hills",
+            description: "Surrounded by the beautiful Aravalli mountain range."
           },
           {
-            title: "Kids Play Area",
-            description: "Little ones can have fun in our safe and supervised play area."
+            title: "Neemrana Fort",
+            description: "Historic Neemrana Fort just 35 km away for weekend visits."
           },
           {
-            title: "Themed Evenings",
-            description: "Join our weekly themed evenings with live music and entertainment."
+            title: "Natural Attractions",
+            description: "Close to waterfalls, lakes, and other natural attractions."
           },
           {
-            title: "Library & Game Room",
-            description: "Relax with a good book or enjoy board games in our common room."
+            title: "Delhi Connectivity",
+            description: "Just 2.5 hours drive from Delhi via NH-9/NH-48."
           }
         ]
       }
     }
+  },
+  pricing: {
+    title: "Simple Pricing",
+    subtitle: "Transparent pricing with flexible payment options.",
+    pricePerSqYard: "₹5100 per sq. yard",
+    plotSizes: "Plot sizes: 500 to 2000 sq. yards",
+    paymentPlan: "Easy 12-month payment plan",
+    registry: "Registry after 50% payment",
+    noCosts: "Transparent pricing, no hidden costs"
   }
 };

@@ -145,6 +145,85 @@ export default function Index() {
           </div>
         </section>
         
+        {/* Gallery Preview Section */}
+        <section className="section">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
+              <span className="text-sm text-primary font-medium uppercase tracking-wider">
+                {t.gallery.title}
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4 text-foreground">
+                Explore Our Property
+              </h2>
+              <p className="text-muted-foreground">
+                Take a glimpse of the beautiful landscapes and facilities at Golden Hills
+              </p>
+            </div>
+            
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+              {[
+                {
+                  src: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&h=300&fit=crop",
+                  alt: "Aravalli Hills landscape"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop", 
+                  alt: "Farmhouse plot view"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop",
+                  alt: "Natural water features"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
+                  alt: "Peaceful environment"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1584132905271-512c958d674a?w=400&h=300&fit=crop",
+                  alt: "Recreation area"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=400&h=300&fit=crop",
+                  alt: "Green landscapes"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop",
+                  alt: "Sunset views"
+                },
+                {
+                  src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&h=300&fit=crop",
+                  alt: "Natural beauty"
+                }
+              ].map((image, index) => (
+                <div 
+                  key={index}
+                  className="relative overflow-hidden rounded-xl aspect-[4/3] group cursor-pointer animate-fade-in hover:scale-105 transition-transform duration-300"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="text-white text-sm font-medium">{image.alt}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* View More Button */}
+            <div className="text-center animate-fade-in [animation-delay:800ms]">
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Link to="/gallery">
+                  View More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+        
         {/* CTA Section */}
         <section className="relative py-24 bg-gradient-to-r from-primary/10 to-sand/10 dark:from-primary/5 dark:to-sand-dark/10">
           <div className="container">

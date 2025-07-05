@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,6 @@ export default function Navbar() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
   
   const navLinks = [
     { name: t.nav.home, path: "/" },
@@ -32,22 +31,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    if (mobileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [mobileMenuOpen]);
   
   // Determine text color based on route and scroll state
   const isHomePage = location.pathname === "/";
@@ -98,34 +81,31 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Popup */}
+      {/* Mobile Popup Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 z-40 animate-fade-in" ref={menuRef}>
-          <div className="bg-background/95 backdrop-blur-sm border border-border shadow-lg rounded-b-xl mx-4 mt-2">
-            <div className="p-4">
-              <ul className="space-y-4 mb-4">
-                {navLinks.map(link => (
-                  <li key={link.name}>
-                    <Link 
-                      to={link.path} 
-                      className="block text-lg font-medium transition-colors hover:text-primary text-foreground py-2" 
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              
-              <a 
-                href="tel:999-888-7776" 
-                className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Phone className="h-4 w-4" />
-                <span>{t.nav.phone}</span>
-              </a>
-            </div>
+        <div className="md:hidden absolute top-full right-4 mt-2 w-64 bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg animate-fade-in">
+          <ul className="space-y-4 p-4">
+            {navLinks.map(link => (
+              <li key={link.name}>
+                <Link
+                  to={link.path}
+                  className="block text-lg font-medium transition-colors hover:text-primary text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="border-t border-border p-4">
+            <a
+              href="tel:999-888-7776"
+              className="flex items-center justify-center space-x-2 w-full text-secondary-foreground font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Phone className="h-4 w-4" />
+              <span>{t.nav.phone}</span>
+            </a>
           </div>
         </div>
       )}

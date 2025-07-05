@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import FloatingVideo from "@/components/FloatingVideo";
+import FloatingCallButton from "@/components/FloatingCallButton";
 import BookingForm from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -161,6 +163,10 @@ export default function Index() {
           
         </section>
       </main>
+      
+      {/* Floating Components */}
+      <FloatingVideo />
+      <FloatingCallButton />
       
       <Footer />
     </div>

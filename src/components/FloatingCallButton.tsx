@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function FloatingCallButton() {
   const handleCallClick = () => {
-    window.location.href = "tel:999-888-7776";
+    window.location.href = "tel:9870450601";
   };
 
   return (
@@ -14,7 +14,7 @@ export default function FloatingCallButton() {
         className="rounded-full w-14 h-14 sm:w-16 sm:h-16 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
       >
         <Phone className="h-6 w-6 sm:h-7 sm:w-7" />
-        <span className="sr-only">Call now: 999-888-7776</span>
+        <span className="sr-only">Call now: +919870450601</span>
       </Button>
       
       {/* Pulse animation rings */}

@@ -99,7 +99,7 @@ export default function Navbar() {
           </ul>
           <div className="border-t border-border p-4">
             <a
-              href="tel:999-888-7776"
+              href="tel:9870450601"
               className="flex items-center justify-center space-x-2 w-full text-secondary-foreground font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >

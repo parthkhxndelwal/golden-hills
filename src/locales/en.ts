@@ -5,7 +5,7 @@ export const en = {
     amenities: "Amenities",
     gallery: "Gallery",
     contact: "Contact",
-    phone: "999-888-7776"
+    phone: "+919870450601"
   },
   hero: {
     subtitle: "Premium Farmhouse Land @ ₹5100 / sq. yard",

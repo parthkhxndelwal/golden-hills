@@ -57,8 +57,18 @@ export default function HeroSection() {
             <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
               <Link to="/booking">{t.hero.bookPlot}</Link>
             </Button>
-            <Button asChild variant="hero" size="lg" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-              <Link to="/apartments">{t.hero.exploreApartments}</Link>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/brochure.pdf';
+                link.download = 'Golden-Hills-Brochure.pdf';
+                link.click();
+              }}
+            >
+              Download Brochure
             </Button>
           </div>
         </div>

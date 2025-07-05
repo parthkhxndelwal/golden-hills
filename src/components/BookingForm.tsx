@@ -44,14 +44,14 @@ export default function BookingForm() {
       onSubmit={handleSubmit} 
       className="glass-card p-6 space-y-6 animate-fade-in [animation-delay:200ms]"
     >
-      <h3 className="text-2xl font-bold text-center mb-6">{t.bookingForm.title}</h3>
+      <h3 className="text-2xl font-bold text-center mb-6">Send Enquiry</h3>
       
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Check-in Date */}
+          {/* Preferred Visit Date */}
           <div className="space-y-2">
             <label htmlFor="check-in" className="block text-sm font-medium">
-              {t.bookingForm.checkIn}
+              Preferred Visit Date
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -64,7 +64,7 @@ export default function BookingForm() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {startDate ? format(startDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
+                  {startDate ? format(startDate, "PPP") : <span>Select date</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
@@ -80,10 +80,10 @@ export default function BookingForm() {
             </Popover>
           </div>
           
-          {/* Check-out Date */}
+          {/* Preferred Time */}
           <div className="space-y-2">
             <label htmlFor="check-out" className="block text-sm font-medium">
-              {t.bookingForm.checkOut}
+              Preferred Time
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -96,7 +96,7 @@ export default function BookingForm() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {endDate ? format(endDate, "PPP") : <span>{t.bookingForm.selectDate}</span>}
+                  {endDate ? format(endDate, "PPP") : <span>Select time</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
@@ -114,10 +114,10 @@ export default function BookingForm() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Adults */}
+          {/* Number of People */}
           <div className="space-y-2">
             <label htmlFor="adults" className="block text-sm font-medium">
-              {t.bookingForm.adults}
+              Number of People
             </label>
             <Select value={adults} onValueChange={setAdults}>
               <SelectTrigger id="adults" className="w-full">
@@ -126,44 +126,44 @@ export default function BookingForm() {
               <SelectContent>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.bookingForm.adult : t.bookingForm.adults}
+                    {num} {num === 1 ? "Person" : "People"}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
           
-          {/* Children */}
+          {/* Special Requirements */}
           <div className="space-y-2">
             <label htmlFor="children" className="block text-sm font-medium">
-              {t.bookingForm.children}
+              Special Requirements
             </label>
             <Select value={children} onValueChange={setChildren}>
               <SelectTrigger id="children" className="w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {[0, 1, 2, 3, 4].map((num) => (
-                  <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.bookingForm.child : t.bookingForm.children}
-                  </SelectItem>
-                ))}
+                <SelectItem value="0">None</SelectItem>
+                <SelectItem value="1">Transportation needed</SelectItem>
+                <SelectItem value="2">Wheelchair accessible</SelectItem>
+                <SelectItem value="3">Specific plot preferences</SelectItem>
+                <SelectItem value="4">Other requirements</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </div>
       </div>
       
-      <Button type="submit" className="w-full btn-primary relative">
+      <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 text-white relative">
         {submitted ? (
           <>
             <Check className="mr-2 h-4 w-4" />
-            {t.bookingForm.bookingConfirmed}
+            Enquiry Sent! We'll contact you soon.
           </>
         ) : (
           <>
             <Users className="mr-2 h-4 w-4" />
-            {t.bookingForm.checkAvailability}
+            Send Enquiry
           </>
         )}
       </Button>

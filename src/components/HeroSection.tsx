@@ -1,47 +1,109 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
+  const backgroundRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    // Prevent scrollbar during animation
+    document.body.style.overflow = 'hidden';
     
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Re-enable scrolling after animation
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // Initial scale animation for background
+    tl.fromTo(
+      backgroundRef.current,
+      {
+        scale: 2,
+      },
+      {
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        transformOrigin: "center center",
+      }
+    );
+    
+    // Setup scroll-triggered parallax after initial animation
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        // Animate background scale from 1 to 2 as you scroll
+        const scale = 1 + progress * 0.3; // 1 to 2
+        // Animate background y from 0 to 100px as you scroll
+        const yPos = progress * 100;
+        gsap.to(backgroundRef.current, {
+          y: yPos,
+          scale: scale,
+          duration: 0.2,
+          overwrite: "auto",
+          ease: "power1.out",
+        });
+        // Animate content y from 0 to 30px as you scroll
+        gsap.to(contentRef.current, {
+          y: yPos * 0.3,
+          duration: 0.2,
+          overwrite: "auto",
+          ease: "power1.out",
+        });
+      }
+    });
+    
+    return () => {
+      // Cleanup ScrollTrigger
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
   
-  // Calculate parallax effect
-  const backgroundY = scrollY * 0.5;
-  const contentY = scrollY * 0.2;
-  
   return (
-    <section className="relative h-screen overflow-hidden">
-      {/* Background image with parallax */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/heroImage.png')",
-          transform: `translateY(${backgroundY}px)`,
-          backgroundPosition: `center ${50 + scrollY * 0.05}%`
-        }}
-      />
+    <section ref={sectionRef} className="relative h-screen overflow-hidden">
+      {/* Background container with proper overflow handling */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Background image with parallax */}
+        <div
+          ref={backgroundRef}
+          className="absolute bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/heroImage.png')",
+            backgroundPosition: "center center",
+            transformOrigin: "center center",
+            width: "120%",
+            height: "120%",
+            top: "-10%",
+            left: "-10%"
+          }}
+        />
+      </div>
       
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/80 to-black/60" />
       
       {/* Content */}
       <div
+        ref={contentRef}
         className="relative h-full flex flex-col justify-center items-center text-center px-4"
-        style={{ transform: `translateY(${contentY}px)` }}
       >
         <div className="max-w-3xl animate-fade-in">
           <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">

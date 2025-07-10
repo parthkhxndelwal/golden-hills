@@ -6,16 +6,9 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Configure CORS: allow local dev and production frontends
-const allowedOrigins = [
-  process.env.FRONTEND_URL || 'https://goldenhillls.com',
-  'http://localhost:8080'
-];
-app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-}));
+// Enable CORS for all origins (adjust in production as needed)
+app.use(cors());
+app.options('*', cors());
 
 app.use(express.json());
 

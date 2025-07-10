@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function Footer() {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-card text-card-foreground pt-16 pb-8 border-t">
       <div className="container">
@@ -31,7 +31,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
           <div className="animate-fade-in [animation-delay:200ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
@@ -43,8 +43,8 @@ export default function Footer() {
                 { name: t.nav.contact, path: "/contact" }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    to={link.path} 
+                  <Link
+                    to={link.path}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -53,7 +53,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div className="animate-fade-in [animation-delay:300ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
@@ -74,21 +74,21 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div className="animate-fade-in [animation-delay:400ms]">
             <h4 className="text-xl font-bold mb-4">{t.footer.newsletter}</h4>
             <p className="text-muted-foreground mb-4">
               {t.footer.newsletterDesc}
             </p>
             <form className="flex flex-col space-y-2">
-              <input 
-                type="email" 
-                placeholder={t.footer.yourEmail} 
+              <input
+                type="email"
+                placeholder={t.footer.yourEmail}
                 className="rounded-md px-4 py-2 bg-muted text-foreground"
-                required 
+                required
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn-primary mt-2"
               >
                 {t.footer.subscribe}
@@ -96,7 +96,7 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        
+
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
           <p>&copy; {currentYear} Golden Hills. {t.footer.allRights}</p>
         </div>

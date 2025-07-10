@@ -86,31 +86,31 @@ export default function BookingPage() {
     specialRequests: ""
   });
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
-  
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Calculate nights and total price
   const nightsCount = startDate && endDate ? differenceInDays(endDate, startDate) : 0;
   const totalPrice = selectedApartment ? selectedApartment.price * nightsCount : 0;
-  
+
   // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   // Handle select changes
   const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   // Submit booking
   const handleSubmitBooking = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // In a real app, this would send the booking data to a server
     console.log("Booking submitted:", {
       apartment: selectedApartment,
@@ -118,10 +118,10 @@ export default function BookingPage() {
       guests: { adults, children },
       customerInfo: formData
     });
-    
+
     // Show confirmation
     setIsBookingConfirmed(true);
-    
+
     // Reset form after booking is confirmed
     setTimeout(() => {
       setCurrentStep(1);
@@ -149,11 +149,11 @@ export default function BookingPage() {
       setIsBookingConfirmed(false);
     }, 5000);
   };
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1 pt-20">
         {/* Header Section */}
         <section className="relative py-16 bg-gradient-to-r from-sand-light to-sand-light/50 dark:from-sand-dark/30 dark:to-sand-dark/10">
@@ -170,14 +170,14 @@ export default function BookingPage() {
               </p>
             </div>
           </div>
-          
+
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
             <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sand/50 blur-3xl" />
           </div>
         </section>
-        
+
         {/* Booking Steps */}
         <section className="container py-8">
           <div className="relative animate-fade-in [animation-delay:200ms]">
@@ -211,7 +211,7 @@ export default function BookingPage() {
                 </div>
               ))}
             </div>
-            
+
             {/* Progress line */}
             <div className="absolute top-5 left-0 right-0 h-0.5 bg-muted z-0">
               <div
@@ -220,7 +220,7 @@ export default function BookingPage() {
               />
             </div>
           </div>
-          
+
           {/* Step 1: Choose Room */}
           {currentStep === 1 && (
             <div className="animate-fade-in [animation-delay:300ms]">
@@ -260,7 +260,7 @@ export default function BookingPage() {
                         </PopoverContent>
                       </Popover>
                     </div>
-                    
+
                     {/* Check-out Date */}
                     <div className="space-y-2">
                       <label htmlFor="check-out" className="block text-sm font-medium">
@@ -292,7 +292,7 @@ export default function BookingPage() {
                         </PopoverContent>
                       </Popover>
                     </div>
-                    
+
                     {/* Adults */}
                     <div className="space-y-2">
                       <label htmlFor="adults" className="block text-sm font-medium">
@@ -311,7 +311,7 @@ export default function BookingPage() {
                         </SelectContent>
                       </Select>
                     </div>
-                    
+
                     {/* Children */}
                     <div className="space-y-2">
                       <label htmlFor="children" className="block text-sm font-medium">
@@ -332,23 +332,23 @@ export default function BookingPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Apartments Selection */}
                 <h2 className="text-xl font-semibold mb-4">Select Your Accommodation</h2>
                 <div className="space-y-6">
                   {apartmentsData.map((apartment) => (
-                    <div 
+                    <div
                       key={apartment.id}
                       className={cn(
                         "border rounded-xl overflow-hidden transition-all flex flex-col md:flex-row",
-                        selectedApartment?.id === apartment.id 
-                          ? "border-primary shadow-md" 
+                        selectedApartment?.id === apartment.id
+                          ? "border-primary shadow-md"
                           : "border-border hover:border-primary/50"
                       )}
                     >
                       <div className="md:w-1/3 h-48 md:h-auto relative">
-                        <img 
-                          src={apartment.image} 
+                        <img
+                          src={apartment.image}
                           alt={apartment.name}
                           className="w-full h-full object-cover"
                         />
@@ -374,7 +374,7 @@ export default function BookingPage() {
                             <span className="text-xl font-bold">${apartment.price}</span>
                             <span className="text-muted-foreground text-sm"> / night</span>
                           </div>
-                          <Button 
+                          <Button
                             variant={selectedApartment?.id === apartment.id ? "default" : "outline"}
                             className={selectedApartment?.id === apartment.id ? "btn-primary" : ""}
                             onClick={() => setSelectedApartment(apartment)}
@@ -393,9 +393,9 @@ export default function BookingPage() {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="flex justify-end mt-8">
-                  <Button 
+                  <Button
                     className="btn-primary"
                     disabled={!selectedApartment}
                     onClick={() => setCurrentStep(2)}
@@ -406,7 +406,7 @@ export default function BookingPage() {
               </div>
             </div>
           )}
-          
+
           {/* Step 2: Guest Details */}
           {currentStep === 2 && (
             <div className="animate-fade-in [animation-delay:300ms]">
@@ -420,107 +420,107 @@ export default function BookingPage() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="firstName">First Name</Label>
-                            <Input 
-                              id="firstName" 
-                              name="firstName" 
-                              value={formData.firstName} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="firstName"
+                              name="firstName"
+                              value={formData.firstName}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="lastName">Last Name</Label>
-                            <Input 
-                              id="lastName" 
-                              name="lastName" 
-                              value={formData.lastName} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="lastName"
+                              name="lastName"
+                              value={formData.lastName}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                         </div>
-                        
+
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="email">Email</Label>
-                            <Input 
-                              id="email" 
-                              name="email" 
-                              type="email" 
-                              value={formData.email} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="email"
+                              name="email"
+                              type="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="phone">Phone</Label>
-                            <Input 
-                              id="phone" 
-                              name="phone" 
-                              value={formData.phone} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="phone"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                         </div>
-                        
+
                         <div className="space-y-2">
                           <Label htmlFor="address">Address</Label>
-                          <Input 
-                            id="address" 
-                            name="address" 
-                            value={formData.address} 
-                            onChange={handleInputChange} 
-                            required 
+                          <Input
+                            id="address"
+                            name="address"
+                            value={formData.address}
+                            onChange={handleInputChange}
+                            required
                           />
                         </div>
-                        
+
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="city">City</Label>
-                            <Input 
-                              id="city" 
-                              name="city" 
-                              value={formData.city} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="city"
+                              name="city"
+                              value={formData.city}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="zipCode">Zip Code</Label>
-                            <Input 
-                              id="zipCode" 
-                              name="zipCode" 
-                              value={formData.zipCode} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="zipCode"
+                              name="zipCode"
+                              value={formData.zipCode}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="country">Country</Label>
-                            <Input 
-                              id="country" 
-                              name="country" 
-                              value={formData.country} 
-                              onChange={handleInputChange} 
-                              required 
+                            <Input
+                              id="country"
+                              name="country"
+                              value={formData.country}
+                              onChange={handleInputChange}
+                              required
                             />
                           </div>
                         </div>
-                        
+
                         <div className="space-y-2">
                           <Label htmlFor="specialRequests">Special Requests</Label>
-                          <textarea 
-                            id="specialRequests" 
-                            name="specialRequests" 
-                            value={formData.specialRequests} 
+                          <textarea
+                            id="specialRequests"
+                            name="specialRequests"
+                            value={formData.specialRequests}
                             onChange={handleInputChange}
                             className="w-full h-24 rounded-md border border-input bg-background px-3 py-2 text-sm"
                             placeholder="Any special requests or notes for your stay"
                           />
                         </div>
                       </div>
-                      
+
                       <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
                       <div className="glass-card p-6 space-y-6">
                         <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)}>
@@ -531,49 +531,49 @@ export default function BookingPage() {
                           <TabsContent value="credit-card" className="space-y-4 mt-4">
                             <div className="space-y-2">
                               <Label htmlFor="cardName">Name on Card</Label>
-                              <Input 
-                                id="cardName" 
-                                name="cardName" 
-                                value={formData.cardName} 
-                                onChange={handleInputChange} 
+                              <Input
+                                id="cardName"
+                                name="cardName"
+                                value={formData.cardName}
+                                onChange={handleInputChange}
                               />
                             </div>
                             <div className="space-y-2">
                               <Label htmlFor="cardNumber">Card Number</Label>
-                              <Input 
-                                id="cardNumber" 
-                                name="cardNumber" 
-                                value={formData.cardNumber} 
+                              <Input
+                                id="cardNumber"
+                                name="cardNumber"
+                                value={formData.cardNumber}
                                 onChange={handleInputChange}
-                                placeholder="0000 0000 0000 0000" 
+                                placeholder="0000 0000 0000 0000"
                               />
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                               <div className="space-y-2">
                                 <Label htmlFor="cardExpiry">Expiry Date</Label>
-                                <Input 
-                                  id="cardExpiry" 
-                                  name="cardExpiry" 
-                                  value={formData.cardExpiry} 
+                                <Input
+                                  id="cardExpiry"
+                                  name="cardExpiry"
+                                  value={formData.cardExpiry}
                                   onChange={handleInputChange}
-                                  placeholder="MM/YY" 
+                                  placeholder="MM/YY"
                                 />
                               </div>
                               <div className="space-y-2">
                                 <Label htmlFor="cardCvc">CVC</Label>
-                                <Input 
-                                  id="cardCvc" 
-                                  name="cardCvc" 
-                                  value={formData.cardCvc} 
+                                <Input
+                                  id="cardCvc"
+                                  name="cardCvc"
+                                  value={formData.cardCvc}
                                   onChange={handleInputChange}
-                                  placeholder="123" 
+                                  placeholder="123"
                                 />
                               </div>
                             </div>
                           </TabsContent>
                           <TabsContent value="pay-at-property" className="mt-4">
                             <p className="text-muted-foreground">
-                              You will be required to provide a valid credit card upon arrival for security purposes, 
+                              You will be required to provide a valid credit card upon arrival for security purposes,
                               but payment will be collected during your stay at the property.
                             </p>
                           </TabsContent>
@@ -581,7 +581,7 @@ export default function BookingPage() {
                       </div>
                     </form>
                   </div>
-                  
+
                   {/* Booking Summary */}
                   <div className="md:col-span-1">
                     <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
@@ -592,7 +592,7 @@ export default function BookingPage() {
                             <h3 className="font-medium mb-1">{selectedApartment.name}</h3>
                             <p className="text-sm text-muted-foreground">{selectedApartment.location}</p>
                           </div>
-                          
+
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>Check-in</span>
@@ -614,7 +614,7 @@ export default function BookingPage() {
                               </span>
                             </div>
                           </div>
-                          
+
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>
@@ -631,7 +631,7 @@ export default function BookingPage() {
                               <span className="font-medium">$30</span>
                             </div>
                           </div>
-                          
+
                           <div className="pt-4">
                             <div className="flex justify-between items-center font-bold">
                               <span>Total</span>
@@ -643,15 +643,15 @@ export default function BookingPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex justify-between mt-8">
-                  <Button 
+                  <Button
                     variant="outline"
                     onClick={() => setCurrentStep(1)}
                   >
                     Back
                   </Button>
-                  <Button 
+                  <Button
                     className="btn-primary"
                     onClick={() => setCurrentStep(3)}
                   >
@@ -661,7 +661,7 @@ export default function BookingPage() {
               </div>
             </div>
           )}
-          
+
           {/* Step 3: Confirmation */}
           {currentStep === 3 && (
             <div className="animate-fade-in [animation-delay:300ms]">
@@ -669,7 +669,7 @@ export default function BookingPage() {
                 {!isBookingConfirmed ? (
                   <>
                     <h2 className="text-xl font-semibold mb-6">Review Booking Details</h2>
-                    
+
                     <div className="glass-card p-6 mb-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Apartment Details */}
@@ -678,8 +678,8 @@ export default function BookingPage() {
                           {selectedApartment && (
                             <div className="space-y-4">
                               <div className="rounded-lg overflow-hidden">
-                                <img 
-                                  src={selectedApartment.image} 
+                                <img
+                                  src={selectedApartment.image}
                                   alt={selectedApartment.name}
                                   className="w-full h-48 object-cover"
                                 />
@@ -712,7 +712,7 @@ export default function BookingPage() {
                             </div>
                           )}
                         </div>
-                        
+
                         {/* Guest Details */}
                         <div>
                           <h3 className="text-lg font-medium mb-4">Guest Details</h3>
@@ -743,14 +743,14 @@ export default function BookingPage() {
                                 <span className="font-medium">{formData.country}</span>
                               </div>
                             </div>
-                            
+
                             {formData.specialRequests && (
                               <div>
                                 <h4 className="font-medium mb-1">Special Requests:</h4>
                                 <p className="text-sm text-muted-foreground">{formData.specialRequests}</p>
                               </div>
                             )}
-                            
+
                             <div>
                               <h4 className="font-medium mb-1">Payment Method:</h4>
                               <p className="text-sm">
@@ -768,7 +768,7 @@ export default function BookingPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Price Summary */}
                     <div className="glass-card p-6 mb-8">
                       <h3 className="text-lg font-medium mb-4">Price Summary</h3>
@@ -797,7 +797,7 @@ export default function BookingPage() {
                         )}
                       </div>
                     </div>
-                    
+
                     {/* Terms and Conditions */}
                     <div className="mb-8">
                       <div className="flex items-start">
@@ -811,15 +811,15 @@ export default function BookingPage() {
                         </label>
                       </div>
                     </div>
-                    
+
                     <div className="flex justify-between">
-                      <Button 
+                      <Button
                         variant="outline"
                         onClick={() => setCurrentStep(2)}
                       >
                         Back
                       </Button>
-                      <Button 
+                      <Button
                         className="btn-primary"
                         onClick={handleSubmitBooking}
                       >
@@ -849,7 +849,7 @@ export default function BookingPage() {
           )}
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

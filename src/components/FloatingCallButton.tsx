@@ -16,7 +16,7 @@ export default function FloatingCallButton() {
         <Phone className="h-6 w-6 sm:h-7 sm:w-7" />
         <span className="sr-only">Call now: +919870450601</span>
       </Button>
-      
+
       {/* Pulse animation rings */}
       <div className="absolute inset-0 rounded-full animate-ping bg-primary/20 -z-10" />
       <div className="absolute inset-0 rounded-full animate-pulse bg-primary/10 -z-10" />

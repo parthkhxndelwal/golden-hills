@@ -12,12 +12,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Index() {
   const { t } = useLanguage();
-  
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Feature items
   const features = [
     {
@@ -51,15 +51,15 @@ export default function Index() {
       description: t.home.amenities.features.location.description
     }
   ];
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection />
-        
+
         {/* Welcome Section */}
         <section id="welcome" className="section bg-gradient-to-b from-sand-light to-sand-light/50 dark:from-sand-dark/20 dark:to-sand-dark/10">
           <div className="container">
@@ -83,26 +83,26 @@ export default function Index() {
                   </Link>
                 </Button>
               </div>
-              
+
               <div className="relative animate-fade-in [animation-delay:300ms]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop"
-                    alt="Seaside view" 
+                    alt="Seaside view"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-2/3 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop"
-                    alt="Luxury apartment interior" 
+                    alt="Luxury apartment interior"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -top-6 -right-6 w-1/2 rounded-2xl overflow-hidden shadow-xl">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop"
-                    alt="Pool view" 
+                    alt="Pool view"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -110,8 +110,8 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
-                
+
+
         {/* Features Section */}
         <section className="section bg-gradient-to-b from-sand-light to-sand-light/50 dark:from-sand-dark/20 dark:to-sand-dark/10">
           <div className="container">
@@ -126,11 +126,11 @@ export default function Index() {
                 {t.home.amenities.description}
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="glass-card p-6 rounded-xl animate-fade-in flex flex-col items-center text-center border-sand/20 dark:border-sand-dark/20"
                   style={{ animationDelay: `${(index + 1) * 100}ms` }}
                 >
@@ -144,7 +144,7 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
+
         {/* Gallery Preview Section */}
         <section className="section">
           <div className="container">
@@ -159,7 +159,7 @@ export default function Index() {
                 Take a glimpse of the beautiful landscapes and facilities at Golden Hills
               </p>
             </div>
-            
+
             {/* Gallery Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
               {[
@@ -168,7 +168,7 @@ export default function Index() {
                   alt: "Aravalli Hills landscape"
                 },
                 {
-                  src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop", 
+                  src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
                   alt: "Farmhouse plot view"
                 },
                 {
@@ -196,13 +196,13 @@ export default function Index() {
                   alt: "Natural beauty"
                 }
               ].map((image, index) => (
-                <div 
+                <div
                   key={index}
                   className="relative overflow-hidden rounded-xl aspect-[4/3] group cursor-pointer animate-fade-in hover:scale-105 transition-transform duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -212,7 +212,7 @@ export default function Index() {
                 </div>
               ))}
             </div>
-            
+
             {/* View More Button */}
             <div className="text-center animate-fade-in [animation-delay:800ms]">
               <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
@@ -223,7 +223,7 @@ export default function Index() {
             </div>
           </div>
         </section>
-        
+
         {/* CTA Section */}
         <section className="relative py-24 bg-gradient-to-r from-primary/10 to-sand/10 dark:from-primary/5 dark:to-sand-dark/10">
           <div className="container">
@@ -239,14 +239,14 @@ export default function Index() {
               </Button>
             </div>
           </div>
-          
+
         </section>
       </main>
-      
+
       {/* Floating Components */}
       <FloatingVideo />
       <FloatingCallButton />
-      
+
       <Footer />
     </div>
   );

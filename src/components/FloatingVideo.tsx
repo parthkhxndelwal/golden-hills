@@ -66,7 +66,7 @@ export default function FloatingVideo() {
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              
+
               {/* Fullscreen Video */}
               <div className="relative w-full h-full bg-muted rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/20 flex items-center justify-center">
@@ -81,7 +81,7 @@ export default function FloatingVideo() {
                     )}
                   </button>
                 </div>
-                
+
                 <img
                   src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&h=675&fit=crop"
                   alt="Property tour fullscreen"
@@ -128,7 +128,7 @@ export default function FloatingVideo() {
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              
+
               <div className="relative bg-muted rounded-lg overflow-hidden aspect-video mb-3">
                 {/* Fullscreen button */}
                 <Button
@@ -139,7 +139,7 @@ export default function FloatingVideo() {
                 >
                   <Maximize className="h-4 w-4" />
                 </Button>
-                
+
                 {/* Video content */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/20 flex items-center justify-center">
                   <button
@@ -153,7 +153,7 @@ export default function FloatingVideo() {
                     )}
                   </button>
                 </div>
-                
+
                 {/* Video thumbnail overlay */}
                 <img
                   src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&h=225&fit=crop"
@@ -164,7 +164,7 @@ export default function FloatingVideo() {
                   )}
                 />
               </div>
-              
+
               <div className="min-h-[2.5rem] flex items-center">
                 <p className="text-xs text-muted-foreground leading-tight">
                   Take a virtual tour of Golden Hills farmhouse plots

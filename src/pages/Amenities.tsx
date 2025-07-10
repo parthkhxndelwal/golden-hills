@@ -7,12 +7,12 @@ import { Activity, Dumbbell, Droplet, Heart, Utensils, Wine, Coffee, Clock, Car,
 
 export default function Amenities() {
   const { t } = useLanguage();
-  
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Helper function to get the appropriate icon for each amenity
   const getIcon = (categoryName: string, index: number) => {
     const icons = {
@@ -21,14 +21,14 @@ export default function Amenities() {
       services: [<Clock key={0} />, <Plane key={1} />, <CarIcon key={2} />, <MapPin key={3} />],
       entertainment: [<Waves key={0} />, <Users key={1} />, <Music key={2} />, <BookOpen key={3} />]
     };
-    
+
     return icons[categoryName as keyof typeof icons]?.[index] || <Coffee />;
   };
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-sand-light to-sand-light/50 dark:from-sand-dark/30 dark:to-sand-dark/10">
@@ -45,14 +45,14 @@ export default function Amenities() {
               </p>
             </div>
           </div>
-          
+
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
             <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sand/50 blur-3xl" />
           </div>
         </section>
-        
+
         {/* Description Section */}
         <section className="py-16">
           <div className="container">
@@ -63,12 +63,12 @@ export default function Amenities() {
             </div>
           </div>
         </section>
-        
+
         {/* Categories Sections */}
         {Object.keys(t.amenitiesPage.categories).map((category, categoryIndex) => {
           const categoryData = t.amenitiesPage.categories[category as keyof typeof t.amenitiesPage.categories];
           const isEven = categoryIndex % 2 === 0;
-          
+
           return (
             <section key={category} className={`py-16 ${isEven ? 'bg-card' : ''}`}>
               <div className="container">
@@ -80,11 +80,11 @@ export default function Amenities() {
                     {categoryData.description}
                   </p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {categoryData.items.map((item, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className="glass-card p-6 rounded-xl flex flex-col items-center text-center animate-fade-in"
                       style={{ animationDelay: `${(index + 1) * 100}ms` }}
                     >
@@ -100,7 +100,7 @@ export default function Amenities() {
             </section>
           );
         })}
-        
+
         {/* Gallery Section */}
         <section className="py-16">
           <div className="container">
@@ -112,14 +112,14 @@ export default function Amenities() {
                 {t.gallery.subtitle}
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {Array.from({ length: 8 }).map((_, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="aspect-square rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
                 >
-                  <img 
+                  <img
                     src={`https://images.unsplash.com/photo-${1550000000000 + index * 100000}?w=400&h=400&fit=crop`}
                     alt={`Amenity ${index + 1}`}
                     className="w-full h-full object-cover"
@@ -130,7 +130,7 @@ export default function Amenities() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -90,40 +90,40 @@ export default function Apartments() {
   const [capacityFilter, setCapacityFilter] = useState<string>("all");
   const [locationFilter, setLocationFilter] = useState<string>("all");
   const [priceRange, setPriceRange] = useState<number[]>([100, 350]);
-  
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Apply filters
   useEffect(() => {
     let result = allApartments;
-    
+
     // Filter by capacity
     if (capacityFilter !== "all") {
       const capacity = parseInt(capacityFilter);
       result = result.filter(apt => apt.capacity >= capacity);
     }
-    
+
     // Filter by location
     if (locationFilter !== "all") {
       result = result.filter(apt => apt.location === locationFilter);
     }
-    
+
     // Filter by price range
     result = result.filter(apt => apt.price >= priceRange[0] && apt.price <= priceRange[1]);
-    
+
     setFilteredApartments(result);
   }, [capacityFilter, locationFilter, priceRange]);
-  
+
   // Get unique locations for filter
   const locations = ["all", ...new Set(allApartments.map(apt => apt.location))];
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1 pt-20">
         {/* Header Section */}
         <section className="relative py-20 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
@@ -137,14 +137,14 @@ export default function Apartments() {
               </p>
             </div>
           </div>
-          
+
           {/* Decorative elements */}
           <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-10">
             <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
             <div className="absolute top-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
           </div>
         </section>
-        
+
         {/* Filter Section */}
         <section className="py-8 border-b">
           <div className="container">
@@ -167,7 +167,7 @@ export default function Apartments() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               {/* Location Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
@@ -185,7 +185,7 @@ export default function Apartments() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               {/* Price Range Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
@@ -202,13 +202,13 @@ export default function Apartments() {
                 />
               </div>
             </div>
-            
+
             <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
               <p className="text-muted-foreground">
                 {t.apartments.filters.showing} {filteredApartments.length} {t.apartments.filters.of} {allApartments.length} {t.apartments.filters.accommodations}
               </p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => {
                   setCapacityFilter("all");
                   setLocationFilter("all");
@@ -220,7 +220,7 @@ export default function Apartments() {
             </div>
           </div>
         </section>
-        
+
         {/* Apartments Grid */}
         <section className="section">
           <div className="container">
@@ -236,8 +236,8 @@ export default function Apartments() {
               <div className="text-center py-12 animate-fade-in">
                 <h3 className="text-xl font-semibold mb-2">{t.apartments.filters.noMatch}</h3>
                 <p className="text-muted-foreground mb-6">{t.apartments.filters.adjustFilters}</p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   onClick={() => {
                     setCapacityFilter("all");
                     setLocationFilter("all");
@@ -251,7 +251,7 @@ export default function Apartments() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

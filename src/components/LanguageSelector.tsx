@@ -41,8 +41,8 @@ export default function LanguageSelector() {
   return (
     <div className="flex items-center">
       <Select value={language} onValueChange={handleLanguageChange}>
-        <SelectTrigger 
-          className="w-[80px] h-10 border-none bg-transparent focus:ring-0" 
+        <SelectTrigger
+          className="w-[80px] h-10 border-none bg-transparent focus:ring-0"
           aria-label="Select Language"
         >
           <div className="flex items-center space-x-2">

@@ -206,7 +206,7 @@ export const en = {
       name: "Name",
       email: "Email",
       phone: "Phone",
-      address: "Address", 
+      address: "Address",
       city: "City",
       country: "Country",
       specialRequests: "Message",

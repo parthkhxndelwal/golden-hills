@@ -42,7 +42,7 @@
       setErrorMsg(null);
 
       try {
-        const response = await fetch('https://backend.goldenhillls.com/contact', {
+        const response = await fetch('https://backend.goldenhillls.com/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),

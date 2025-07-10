@@ -6,16 +6,10 @@ const nodemailer = require('nodemailer');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Manually set CORS headers for all responses
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-  next();
-});
+// Enable CORS for all origins
+app.use(cors());
+// Preflight support
+app.options('*', cors());
 
 app.use(express.json());
 
@@ -39,6 +33,11 @@ const transporter = nodemailer.createTransport({
 transporter.verify().then(() => {
   console.log('SMTP server is ready to take our messages');
 }).catch(console.error);
+
+// Health check endpoint
+app.get('/contact', (req, res) => {
+  res.send('Working');
+});
 
 // Contact route
 app.post('/contact', async (req, res) => {

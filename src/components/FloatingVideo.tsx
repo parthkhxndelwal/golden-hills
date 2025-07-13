@@ -1,35 +1,132 @@
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { X, Play, Pause, Maximize, Minimize } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const POSTER_URL =
+  "/video.mp4";
 
 export default function FloatingVideo() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+  const [savedTime, setSavedTime] = useState(0);
+  const [isClosing, setIsClosing] = useState(false);
+  const [isCollapsing, setIsCollapsing] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleToggleExpand = () => {
-    setIsExpanded(!isExpanded);
+    if (isExpanded && !isClosing) {
+      // Start closing sequence
+      setIsClosing(true);
+      setShowContent(false);
+      // Wait for content to fade out, then start collapsing
+      setTimeout(() => {
+        setIsCollapsing(true);
+        setIsExpanded(false);
+        // Wait for popup to shrink, then show play button and reset states
+        setTimeout(() => {
+          setIsClosing(false);
+          setIsCollapsing(false);
+        }, 500); // Match the popup shrink duration
+      }, 300); // Content fade duration
+    } else if (!isExpanded) {
+      setIsExpanded(true);
+    }
   };
 
   const handleTogglePlay = () => {
-    setIsPlaying(!isPlaying);
+    setIsPlaying((prev) => {
+      const next = !prev;
+      if (videoRef.current) {
+        if (next) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      }
+      return next;
+    });
   };
 
   const handleToggleFullscreen = () => {
+    if (!isFullscreen && videoRef.current) {
+      // Save current time when entering fullscreen
+      setSavedTime(videoRef.current.currentTime);
+    } else if (isFullscreen && videoRef.current) {
+      // Save current time when exiting fullscreen
+      setSavedTime(videoRef.current.currentTime);
+    }
     setIsFullscreen(!isFullscreen);
   };
 
-  // Handle escape key to close fullscreen
+  // Pause video when closing fullscreen or collapsed
+  useEffect(() => {
+    if (!isFullscreen && videoRef.current && savedTime > 0) {
+      // Restore time when returning from fullscreen
+      videoRef.current.currentTime = savedTime;
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else if (!isFullscreen && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [isFullscreen]);
+
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isFullscreen) {
+      if (event.key === "Escape" && isFullscreen) {
         setIsFullscreen(false);
       }
     };
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => document.removeEventListener("keydown", handleEscapeKey);
+  }, [isFullscreen]);
 
-    document.addEventListener('keydown', handleEscapeKey);
-    return () => document.removeEventListener('keydown', handleEscapeKey);
+  // Sync play/pause state with video events
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleEnded = () => setIsPlaying(false);
+    video.addEventListener("ended", handleEnded);
+    return () => video.removeEventListener("ended", handleEnded);
+  }, []);
+
+  // Autoplay when expanded
+  useEffect(() => {
+    if (isExpanded && videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  }, [isExpanded]);
+
+  // Fade in content after expansion completes
+  useEffect(() => {
+    if (isExpanded && !isClosing) {
+      const timer = setTimeout(() => {
+        setShowContent(true);
+      }, 520); // 500ms expansion + 20ms delay
+      return () => clearTimeout(timer);
+    }
+  }, [isExpanded, isClosing]);
+
+  // Resume video from saved time when entering fullscreen
+  useEffect(() => {
+    if (isFullscreen && videoRef.current && savedTime >= 0) {
+      // Use a small delay to ensure video is ready
+      const timer = setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = savedTime;
+          if (isPlaying) {
+            videoRef.current.play().catch(error => {
+              console.log("Auto-play was prevented:", error);
+            });
+          }
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
   }, [isFullscreen]);
 
   return (
@@ -69,27 +166,28 @@ export default function FloatingVideo() {
 
               {/* Fullscreen Video */}
               <div className="relative w-full h-full bg-muted rounded-lg overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/20 flex items-center justify-center">
-                  <button
-                    onClick={handleTogglePlay}
-                    className="bg-primary/20 backdrop-blur-sm rounded-full p-8 hover:bg-primary/30 transition-colors"
-                  >
-                    {isPlaying ? (
-                      <Pause className="h-12 w-12 text-primary" />
-                    ) : (
-                      <Play className="h-12 w-12 text-primary ml-2" />
-                    )}
-                  </button>
-                </div>
-
-                <img
-                  src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&h=675&fit=crop"
-                  alt="Property tour fullscreen"
+                <video
+                  ref={videoRef}
+                  src="/video.mp4"
                   className={cn(
                     "absolute inset-0 w-full h-full object-cover transition-opacity",
-                    isPlaying ? "opacity-30" : "opacity-100"
+                    isPlaying ? "opacity-100" : "opacity-70"
                   )}
+                  controls={false}
+                  loop={false}
+                  preload="metadata"
+                  poster={POSTER_URL}
                 />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  {!isPlaying && (
+                    <button
+                      onClick={handleTogglePlay}
+                      className="pointer-events-auto bg-primary/20 backdrop-blur-sm rounded-full p-8 hover:bg-primary/30 transition-colors"
+                    >
+                      <Play className="h-12 w-12 text-primary ml-2" />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -108,13 +206,19 @@ export default function FloatingVideo() {
             // Collapsed state - small circular button
             <button
               onClick={handleToggleExpand}
-              className="w-full h-full flex items-center justify-center rounded-xl bg-primary/10 hover:bg-primary/20 transition-colors"
+              className={cn(
+                "w-full h-full flex items-center justify-center rounded-xl bg-primary/10 hover:bg-primary/20 transition-all duration-300",
+                isCollapsing ? "opacity-0" : "opacity-100"
+              )}
             >
               <Play className="h-6 w-6 text-primary" />
             </button>
           ) : (
             // Expanded state - video player
-            <div className="p-4">
+            <div className={cn(
+              "p-4 transition-opacity duration-300",
+              showContent ? "opacity-100" : "opacity-0"
+            )}>
               <div className="flex items-center justify-between mb-3">
                 <div className="min-w-0 flex-1">
                   <span className="text-sm font-medium text-primary block truncate">Property Tour</span>
@@ -141,28 +245,28 @@ export default function FloatingVideo() {
                 </Button>
 
                 {/* Video content */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-sand/20 flex items-center justify-center">
-                  <button
-                    onClick={handleTogglePlay}
-                    className="bg-primary/20 backdrop-blur-sm rounded-full p-4 hover:bg-primary/30 transition-colors"
-                  >
-                    {isPlaying ? (
-                      <Pause className="h-6 w-6 text-primary" />
-                    ) : (
-                      <Play className="h-6 w-6 text-primary ml-1" />
-                    )}
-                  </button>
-                </div>
-
-                {/* Video thumbnail overlay */}
-                <img
-                  src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&h=225&fit=crop"
-                  alt="Property tour thumbnail"
+                <video
+                  ref={videoRef}
+                  src="/video.mp4"
                   className={cn(
                     "absolute inset-0 w-full h-full object-cover transition-opacity",
-                    isPlaying ? "opacity-30" : "opacity-100"
+                    isPlaying ? "opacity-100" : "opacity-70"
                   )}
+                  controls={false}
+                  loop={false}
+                  preload="metadata"
+                  poster={POSTER_URL}
                 />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  {!isPlaying && (
+                    <button
+                      onClick={handleTogglePlay}
+                      className="pointer-events-auto bg-primary/20 backdrop-blur-sm rounded-full p-4 hover:bg-primary/30 transition-colors"
+                    >
+                      <Play className="h-6 w-6 text-primary ml-1" />
+                    </button>
+                  )}
+                </div>
               </div>
 
               <div className="min-h-[2.5rem] flex items-center">

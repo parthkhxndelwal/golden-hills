@@ -71,7 +71,7 @@
             <div className="container relative z-10">
               <div className="max-w-3xl mx-auto text-center animate-fade-in">
                 <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                  Golden Hills
+                  Send us a message
                 </span>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6 text-foreground">
                   {t.contact.title}
@@ -138,7 +138,7 @@
 
                   <div className="aspect-video rounded-xl overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03606358136!2d14.165818971864153!3d40.85529294646443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0a3c328d896b%3A0x309e11f99628150!2sGulf%20of%20Naples!5e0!3m2!1sen!2sus!4v1628613152777!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7058.21309910624!2d76.106407!3d27.806491!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d4999a7153a69%3A0x70f5e32293a5ee5c!2sGolden%20Hills!5e0!3m2!1sen!2sin!4v1752409112372!5m2!1sen!2sin"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}

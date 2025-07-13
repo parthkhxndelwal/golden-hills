@@ -55,7 +55,7 @@
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" variant="heroSolid" className="min-w-[200px] rounded-full transform transition-all duration-300 hover:translate-y-[-2px]">
-                <Link to="/booking">{t.hero.bookPlot}</Link>
+                <Link to="/contact">{t.hero.bookPlot}</Link>
               </Button>
               <Button
                 variant="hero"

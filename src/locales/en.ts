@@ -226,7 +226,7 @@ export const en = {
     }
   },
   contact: {
-    title: "Contact Us",
+    title: "Ready to book your plot?",
     subtitle: "We're here to help you find your perfect farmhouse plot. Reach out with any questions.",
     getInTouch: "Get In Touch",
     address: "Address",

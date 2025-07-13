@@ -164,47 +164,63 @@ export default function Index() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
               {[
                 {
-                  src: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400&h=300&fit=crop",
-                  alt: "Aravalli Hills landscape"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop",
-                  alt: "Farmhouse plot view"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&h=300&fit=crop",
-                  alt: "Natural water features"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
-                  alt: "Peaceful environment"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1584132905271-512c958d674a?w=400&h=300&fit=crop",
-                  alt: "Recreation area"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=400&h=300&fit=crop",
-                  alt: "Green landscapes"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1545579133-99bb5ab189bd?w=400&h=300&fit=crop",
-                  alt: "Sunset views"
-                },
-                {
-                  src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=400&h=300&fit=crop",
-                  alt: "Natural beauty"
-                }
+                    id: 1,
+                    src: "/gallery/image1.png",
+                    alt: "",
+                    category: "landscape"
+                  },
+                  {
+                    id: 2,
+                    src: "/gallery/image2.png",
+                    alt: "",
+                    category: "plots"
+                  },
+                  {
+                    id: 3,
+                    src: "/gallery/image3.png",
+                    alt: "",
+                    category: "plots"
+                  },
+                  {
+                    id: 4,
+                    src: "/gallery/image4.png",
+                    alt: "",
+                    category: "landscape"
+                  },
+                  {
+                    id: 5,
+                    src: "/gallery/image5.png",
+                    alt: "",
+                    category: "plots"
+                  },
+                  {
+                    id: 6,
+                    src: "/gallery/image6.png",
+                    alt: "",
+                    category: "plots"
+                  },
+                  {
+                    id: 7,
+                    src: "/gallery/image7.png",
+                    alt: "Suitable Soil",
+                    category: "amenities"
+                  },
+                  {
+                    id: 8,
+                    src: "/gallery/image8.png",
+                    alt: "",
+                    category: "landscape"
+                  }
               ].map((image, index) => (
                 <div
                   key={index}
                   className="relative overflow-hidden rounded-xl aspect-[4/3] group cursor-pointer animate-fade-in hover:scale-105 transition-transform duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white text-sm font-medium">{image.alt}</p>

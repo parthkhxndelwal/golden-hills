@@ -10,76 +10,101 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
-    alt: "Beachfront view",
-    category: "exterior"
+    src: "/gallery/image1.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
-    alt: "Luxury suite interior",
-    category: "rooms"
+    src: "/gallery/image2.png",
+    alt: "",
+    category: "plots"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1584132905271-512c958d674a?w=800&h=600&fit=crop",
-    alt: "Swimming pool",
-    category: "amenities"
+    src: "/gallery/image3.png",
+    alt: "",
+    category: "plots"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&h=600&fit=crop",
-    alt: "Premium apartment",
-    category: "rooms"
+    src: "/gallery/image4.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&h=600&fit=crop",
-    alt: "Beach sunset",
-    category: "exterior"
+    src: "/gallery/image5.png",
+    alt: "",
+    category: "plots"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop",
-    alt: "Dining area",
-    category: "amenities"
+    src: "/gallery/image6.png",
+    alt: "",
+    category: "plots"
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&fit=crop",
-    alt: "Bathroom",
-    category: "rooms"
+    src: "/gallery/image7.png",
+    alt: "Suitable Soil",
+    category: "amenities"
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=600&fit=crop",
-    alt: "Beach pathway",
-    category: "exterior"
+    src: "/gallery/image8.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop",
-    alt: "Restaurant",
-    category: "amenities"
+    src: "/gallery/image9.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&h=600&fit=crop",
-    alt: "Bedroom",
-    category: "rooms"
+    src: "/gallery/image10.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop",
-    alt: "Beach umbrellas",
-    category: "exterior"
+    src: "/gallery/image11.png",
+    alt: "",
+    category: "landscape"
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop",
-    alt: "Spa",
+    src: "/gallery/image12.png",
+    alt: "",
+    category: "landscape"
+  },
+  {
+    id: 13,
+    src: "/gallery/image13.png",
+    alt: "Water Supply",
     category: "amenities"
   },
+  {
+    id: 14,
+    src: "/gallery/image14.png",
+    alt: "",
+    category: "landscape"
+  },
+  {
+    id: 15,
+    src: "/gallery/image15.png",
+    alt: "",
+    category: "landscape"
+  },
+  {
+    id: 16,
+    src: "/gallery/image16.png",
+    alt: "Gated Society",
+    category: "amenities"
+  },
+
 ];
 
 export default function Gallery() {
@@ -170,7 +195,7 @@ export default function Gallery() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in">
-              {["all", "exterior", "rooms", "amenities"].map((category) => (
+              {["all", "landscape", "plots", "amenities"].map((category) => (
                 <button
                   key={category}
                   onClick={() => filterGallery(category)}
@@ -183,10 +208,10 @@ export default function Gallery() {
                 >
                   {category === "all"
                     ? t.gallery.filters.all
-                    : category === "exterior"
-                      ? t.gallery.filters.exterior
-                      : category === "rooms"
-                        ? t.gallery.filters.rooms
+                    : category === "landscape"
+                      ? t.gallery.filters.landscape
+                      : category === "plots"
+                        ? t.gallery.filters.plots
                         : t.gallery.filters.amenities}
                 </button>
               ))}

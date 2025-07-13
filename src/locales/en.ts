@@ -132,8 +132,8 @@ export const en = {
     subtitle: "Explore Golden Hills through captivating imagery of our natural surroundings.",
     filters: {
       all: "All",
-      exterior: "Landscape",
-      rooms: "Plots",
+      landscape: "Landscape",
+      plots: "Plots",
       amenities: "Amenities"
     }
   },

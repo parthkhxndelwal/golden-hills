@@ -100,25 +100,11 @@
                   <div className="glass-card p-6 space-y-6 mb-8">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                        <MapPin className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">{t.contact.address}</h3>
-                        <p className="text-muted-foreground">
-                          123 Seaside Boulevard<br />
-                          Costa Bella, 12345<br />
-                          Italy
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                         <Phone className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                        <p className="text-muted-foreground">+91 9870450601</p>
+                        <p className="text-muted-foreground"><a href="tel:9870450601">+919870450601</a></p>
                       </div>
                     </div>
 
@@ -128,8 +114,7 @@
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                        <p className="text-muted-foreground">goldenhill.ajay@gmail.com</p>
-                        <p className="text-muted-foreground">goldenhill.ajay@gmail.com</p>
+                        <p className="text-muted-foreground"><a href="mailto:goldenhill.ajay@gmail.com">goldenhill.ajay@gmail.com</a></p>
                       </div>
                     </div>
 
@@ -164,7 +149,7 @@
                               name="name"
                               value={formData.name}
                               onChange={handleInputChange}
-                              placeholder="John Doe"
+                              placeholder="Enter name"
                               required
                             />
                           </div>
@@ -177,7 +162,7 @@
                               type="email"
                               value={formData.email}
                               onChange={handleInputChange}
-                              placeholder="john@example.com"
+                              placeholder="Enter Email"
                               required
                             />
                           </div>
@@ -191,7 +176,7 @@
                               name="phone"
                               value={formData.phone}
                               onChange={handleInputChange}
-                              placeholder="+1 234 567 8900"
+                              placeholder="Enter Phone Number"
                             />
                           </div>
 
@@ -202,7 +187,7 @@
                               name="subject"
                               value={formData.subject}
                               onChange={handleInputChange}
-                              placeholder="Reservation Inquiry"
+                              placeholder="Enter Subject"
                               required
                             />
                           </div>
@@ -216,7 +201,7 @@
                             value={formData.message}
                             onChange={handleInputChange}
                             placeholder={t.contact.howCanWeHelp}
-                            className="w-full min-h-[150px] p-3 rounded-md border border-input bg-background"
+                            className="w-[99.4%] m-0 min-h-[100px] p-4 ml-0.5 rounded-md border border-input bg-background"
                             required
                           />
                         </div>

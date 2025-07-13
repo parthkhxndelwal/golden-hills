@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className="hidden md:flex items-center space-x-2">
         {/* <ThemeToggle /> */}
         <a
-          href="tel:999-888-7776"
+          href="tel:9870450601"
           className="flex items-center space-x-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
         >
           <Phone className="h-4 w-4" />

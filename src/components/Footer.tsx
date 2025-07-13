@@ -16,20 +16,7 @@ export default function Footer() {
             <p className="text-muted-foreground mb-4">
               {t.footer.description}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </a>
-            </div>
+            
           </div>
 
           <div className="animate-fade-in [animation-delay:200ms]">
@@ -37,7 +24,6 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { name: t.nav.home, path: "/" },
-                { name: t.nav.apartments, path: "/apartments" },
                 { name: t.nav.amenities, path: "/amenities" },
                 { name: t.nav.gallery, path: "/gallery" },
                 { name: t.nav.contact, path: "/contact" }
@@ -60,17 +46,17 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-0.5 text-primary" />
                 <span className="text-muted-foreground">
-                  Benati Village<br />
-                  Rajasthan, India
+                  <a href="https://maps.app.goo.gl/kK34TZfQ83228U1dA">Benati Village<br />
+                  Rajasthan, India</a>
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">+91-9870450601</span>
+                <span className="text-muted-foreground"><a href="tel:9870450601">+919870450601</a></span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">goldenhill.ajay@gmail.com</span>
+                <span className="text-muted-foreground"><a href="mailto:goldenhill.ajay@gmail.com">goldenhill.ajay@gmail.com</a></span>
               </li>
             </ul>
           </div>

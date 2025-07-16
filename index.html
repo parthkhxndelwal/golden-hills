@@ -11,9 +11,9 @@
     <script>
       (function() {
         // Default to dark mode, only use light mode if explicitly set
-        const isDarkMode = localStorage.getItem("theme") !== "light";
-        if (isDarkMode) {
-          document.documentElement.classList.add("dark");
+        const isLightMode = localStorage.getItem("theme") !== "dark";
+        if (isLightMode) {
+          document.documentElement.classList.add("light");
         }
       })();
     </script>

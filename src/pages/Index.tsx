@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import FloatingVideo from "@/components/FloatingVideo";
 import FloatingCallButton from "@/components/FloatingCallButton";
-import BookingForm from "@/components/BookingForm";
 import LayoutGridDemo from "@/components/ui/layout-grid-demo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";

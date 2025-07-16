@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page -->
+  <url>
+    <loc>https://goldenhillls.com/</loc>
+    <lastmod>2025-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://goldenhillls.com/gallery</loc>
+    <lastmod>2025-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://goldenhillls.com/contact</loc>
+    <lastmod>2025-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Amenities -->
+  <url>
+    <loc>https://goldenhillls.com/amenities</loc>
+    <lastmod>2025-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Booking (if you expose a booking page) -->
+  <url>
+    <loc>https://goldenhillls.com/booking</loc>
+    <lastmod>2025-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

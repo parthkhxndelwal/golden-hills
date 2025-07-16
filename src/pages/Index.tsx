@@ -58,6 +58,7 @@ export default function Index() {
       <Navbar />
 
       <main className="flex-1">
+        <title hidden>Golden Hills – Premium Farmhouse Plots near Delhi NCR</title>
         {/* Hero Section */}
         <HeroSection />
 

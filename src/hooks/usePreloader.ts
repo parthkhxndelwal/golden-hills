@@ -21,6 +21,7 @@ export const usePreloader = () => {
           '/placeholder.svg',
           '/brochure.pdf',
           '/lovable-uploads/676a26bb-7a10-4030-9e46-379c66a5be16.png'
+          ,'/video.mp4'
         ];
 
         const imagePromises = publicImages.map((src) => {
